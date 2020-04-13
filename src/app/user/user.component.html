@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <form (ngSubmit)='getProfile()' #goalForm='ngForm'>
+        <div class="form-group">
+          <img class="img-fluid" src="assets/images.png" alt="">
+          <img class="img-fluid" src="assets/download2.jpeg" alt="">
+          <div class="input-group">
+            <span class="input-group-addon"><button type="submit" class="btn btn-success"><i class="fa fa-search"
+                  aria-hidden="true"></i></button></span>
+            <input type="text" class="form-control" placeholder="User Name" name="username" [(ngModel)]="username">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+
+  <div>
+    <div class="card bd-0" *ngIf="user">
+      <div class="card-header bg-dark">
+        <ul class="nav nav-tabs nav-tabs-for-dark card-header-tabs">
+          <li class="nav-item">
+            <a class="nav-link bd-0 active pd-y-8" href="#user" data-toggle="tab">user</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link bd-0 tx-gray-light" href="#repositories" data-toggle="tab">repositories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link bd-0 tx-gray-light" href="#contact" data-toggle="tab">Social</a>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-content card-body">
+        <div class="tab-pane fade show active" id="user">
+          <div class="row">
+            <div class="col-md-4">
+              <img class="img-thumbnail" src="{{user.avatar_url}}" alt="avatar">
+            </div>
+            <div class="col-md-8">
+              <h5>{{user.login}}</h5>
+              <h6>{{user.name}}</h6>
+              <p>Email: {{user.email}}</p>
+              <p>Blog: {{user.blog}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="repositories">
+          <div class="row">
+            <div class="col-md-12">
+              <h5>Repositories</h5>
+              <div *ngFor="let repo of repos">
+                <p>
+                  <strong>{{repo.name}}</strong>:
+                </p>
+                <p>
+                  {{repo.description}}
+                </p>
+                <p>
+                  <a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-warning">View
+                    repository</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="contact">
+          <div class="row">
+            <div class="col-md-12">
+              <p>Email: {{user.email}}</p>
+              <p>Followers: {{user.followers}}</p>
+              <p>following: {{user.following}}</p>
+              <p><a href="{{user.html_url}}" target="_blank" class="btn btn-sm btn-primary">View Profile</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

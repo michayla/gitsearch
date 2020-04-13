@@ -7,6 +7,7 @@ export const environment = {
   apiUrl:"https://api.github.com/users/",
   access_token: "9fbe2f38a62ff2852e42909e5b1cf6e79b947da8"
 };
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
