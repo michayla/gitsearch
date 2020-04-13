@@ -29,7 +29,7 @@ Gitsearch
 
 ## Known Bugs
 
-- I got some bugs during my project development process but i managed to solve them.
+- I got some bugs during my project development process but I managed to solve them.
 
 ## Development
 
