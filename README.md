@@ -1,5 +1,5 @@
 ## Project Name
-- Gitsearch
+- 
 ## Author
 - Michuki Michelle
 ## Description
